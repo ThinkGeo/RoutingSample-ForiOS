@@ -34,7 +34,7 @@ namespace RoutingSample_iOS
             mapView.MapSingleTap += MapViewMapSingleTap;
 
             LayerOverlay backgroundOverlay = new LayerOverlay();
-            string shapeFilePath = Path.Combine("AppData", "land_lnd_street_segment_route.routable.shp");
+            string shapeFilePath = Path.Combine("AppData", "DallasCounty-3857.shp");
             ShapeFileFeatureLayer shapeFileFeatureLayer = new ShapeFileFeatureLayer(shapeFilePath);
             shapeFileFeatureLayer.ZoomLevelSet.ZoomLevel01.DefaultLineStyle = WorldStreetsLineStyles.MotorwayFill(2.0f);
             shapeFileFeatureLayer.ZoomLevelSet.ZoomLevel01.ApplyUntilZoomLevel = ApplyUntilZoomLevel.Level20;
@@ -46,16 +46,15 @@ namespace RoutingSample_iOS
             layerOverlay.Layers.Add(routingLayer);
             mapView.Overlays.Add(layerOverlay);
 
-            string rtgPath = Path.Combine("AppData", "land_lnd_street_segment_route.rtg");
+            string rtgPath = Path.Combine("AppData", "DallasCounty-3857.rtg");
             var routingSource = new RtgRoutingSource(rtgPath);
             var featureSource = new ShapeFileFeatureSource(shapeFilePath);
-            featureSource.Open();
-            var boundry = featureSource.GetBoundingBox();
+
             routingEngine = new RoutingEngine(routingSource, featureSource);
             routingEngine.GeographyUnit = GeographyUnit.Meter;
-            routingEngine.SearchRadiusInMeters = 2000000;
+            routingEngine.SearchRadiusInMeters = 200;
 
-            mapView.CurrentExtent = new RectangleShape(307619.124092, 900219997.607509, 121246866.13256, 800097784.115004);
+            mapView.CurrentExtent = new RectangleShape(-10781100.2970769, 3875007.18710502, -10767407.8727504, 3854947.78546675);
             mapView.Refresh();
         }
 
