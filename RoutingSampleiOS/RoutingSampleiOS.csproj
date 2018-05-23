@@ -88,6 +88,8 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DirectionDataItem.cs" />
+    <Compile Include="DirectionTableViewDataSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <BundleResource Include="com.companyname.RoutingSample.mapsuitelicense" />
