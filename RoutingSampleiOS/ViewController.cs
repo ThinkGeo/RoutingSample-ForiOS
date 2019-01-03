@@ -34,16 +34,18 @@ namespace RoutingSample_iOS
             ComposeTableControl();
 
             mapView.MapUnit = GeographyUnit.Meter;
+            mapView.ZoomLevelSet = ThinkGeoCloudMapsOverlay.GetZoomLevelSet();
             mapView.MapSingleTap += MapViewMapSingleTap;
 
-            string shapeFilePath = Path.Combine("AppData", "DallasCounty-3857.shp");
-            mapView.Overlays.Add(new WorldStreetAndImageryOverlay() { Projection = WorldStreetsAndImageryProjection.SphericalMercator});
+            ThinkGeoCloudMapsOverlay thinkGeoCloudMapsOverlay = new ThinkGeoCloudMapsOverlay();
+            mapView.Overlays.Add(thinkGeoCloudMapsOverlay);
 
             layerOverlay = new LayerOverlay();
             routingLayer = new RoutingLayer();
             layerOverlay.Layers.Add(routingLayer);
             mapView.Overlays.Add(layerOverlay);
 
+            string shapeFilePath = Path.Combine("AppData", "DallasCounty-3857.shp");
             string rtgPath = Path.Combine("AppData", "DallasCounty-3857.rtg");
             var routingSource = new RtgRoutingSource(rtgPath);
             var featureSource = new ShapeFileFeatureSource(shapeFilePath);

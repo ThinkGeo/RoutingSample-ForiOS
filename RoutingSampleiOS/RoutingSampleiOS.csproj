@@ -92,7 +92,6 @@
     <Compile Include="DirectionTableViewDataSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <BundleResource Include="com.companyname.RoutingSample.mapsuitelicense" />
     <BundleResource Include="AppData\DallasCounty-3857.dbf" />
     <BundleResource Include="AppData\DallasCounty-3857.ids" />
     <BundleResource Include="AppData\DallasCounty-3857.idx" />
@@ -110,6 +109,7 @@
     <BundleResource Include="AppData\DallasCounty-4326.shortest.rtx" />
     <BundleResource Include="AppData\DallasCounty-4326.shp" />
     <BundleResource Include="AppData\DallasCounty-4326.shx" />
+    <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,42 +125,44 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GeoAPI, Version=1.7.4.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
-      <HintPath>..\packages\MapSuiteDependency-GeoAPI.10.2.1\lib\xamarinios10\GeoAPI.dll</HintPath>
+      <HintPath>..\packages\MapSuiteDependency-GeoAPI.10.4.0\lib\xamarinios10\GeoAPI.dll</HintPath>
     </Reference>
     <Reference Include="GeoAPI.Bootstrapper.NetTopologySuite, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
-      <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.2.1\lib\xamarinios10\GeoAPI.Bootstrapper.NetTopologySuite.dll</HintPath>
+      <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.4.0\lib\xamarinios10\GeoAPI.Bootstrapper.NetTopologySuite.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="NetTopologySuite, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
-      <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.2.1\lib\xamarinios10\NetTopologySuite.dll</HintPath>
+      <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.4.0\lib\xamarinios10\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\MapSuiteDependency-NewtonsoftJson.10.4.0\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PowerCollections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2573bf8a1bdddcd5, processorArchitecture=MSIL">
-      <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.2.1\lib\xamarinios10\PowerCollections.dll</HintPath>
+      <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.4.0\lib\xamarinios10\PowerCollections.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="ThinkGeo.Cloud.Client, Version=10.4.0.0, Culture=neutral, PublicKeyToken=0828af5241fb4207, processorArchitecture=MSIL">
+      <HintPath>..\packages\ThinkGeo.Cloud.Client.10.4.2\lib\xamarinios10\ThinkGeo.Cloud.Client.dll</HintPath>
+    </Reference>
     <Reference Include="ThinkGeo.MapSuite, Version=10.0.0.0, Culture=neutral, PublicKeyToken=0828af5241fb4207, processorArchitecture=MSIL">
-      <HintPath>..\packages\ThinkGeo.MapSuite.11.0.0-beta065\lib\xamarinios10\ThinkGeo.MapSuite.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\ThinkGeo.MapSuite.10.4.0\lib\xamarinios10\ThinkGeo.MapSuite.dll</HintPath>
     </Reference>
     <Reference Include="ThinkGeo.MapSuite.iOS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=0828af5241fb4207, processorArchitecture=MSIL">
-      <HintPath>..\packages\MapSuiteMobileForiOS-BareBone.11.0.0-beta037\lib\xamarinios10\ThinkGeo.MapSuite.iOS.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\MapSuiteMobileForiOS-BareBone.10.4.1\lib\xamarinios10\ThinkGeo.MapSuite.iOS.dll</HintPath>
     </Reference>
     <Reference Include="ThinkGeo.MapSuite.Layers.ShapeFile, Version=10.0.0.0, Culture=neutral, PublicKeyToken=0828af5241fb4207, processorArchitecture=MSIL">
-      <HintPath>..\packages\ThinkGeo.MapSuite.Layers.ShapeFile.11.0.0-beta008\lib\xamarinios10\ThinkGeo.MapSuite.Layers.ShapeFile.dll</HintPath>
+      <HintPath>..\packages\ThinkGeo.MapSuite.Layers.ShapeFile.10.4.0\lib\xamarinios10\ThinkGeo.MapSuite.Layers.ShapeFile.dll</HintPath>
     </Reference>
     <Reference Include="ThinkGeo.MapSuite.Layers.SqliteForMono, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0828af5241fb4207, processorArchitecture=MSIL">
-      <HintPath>..\packages\ThinkGeo.MapSuite.Layers.SqliteForMono.11.0.0-beta015\lib\xamarinios10\ThinkGeo.MapSuite.Layers.SqliteForMono.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\ThinkGeo.MapSuite.Layers.SqliteForMono.10.4.0\lib\xamarinios10\ThinkGeo.MapSuite.Layers.SqliteForMono.dll</HintPath>
     </Reference>
     <Reference Include="ThinkGeo.MapSuite.Routing, Version=10.0.0.0, Culture=neutral, PublicKeyToken=0828af5241fb4207, processorArchitecture=MSIL">
-      <HintPath>..\packages\ThinkGeo.MapSuite.Routing.11.0.0-beta012\lib\xamarinios10\ThinkGeo.MapSuite.Routing.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\ThinkGeo.MapSuite.Routing.10.4.0\lib\xamarinios10\ThinkGeo.MapSuite.Routing.dll</HintPath>
     </Reference>
     <Reference Include="ThinkGeo.MapSuite.Styles.WorldStreets, Version=10.0.0.0, Culture=neutral, PublicKeyToken=0828af5241fb4207, processorArchitecture=MSIL">
-      <HintPath>..\packages\ThinkGeo.MapSuite.Styles.WorldStreets.11.0.0-beta005\lib\xamarinios10\ThinkGeo.MapSuite.Styles.WorldStreets.dll</HintPath>
+      <HintPath>..\packages\ThinkGeo.MapSuite.Styles.WorldStreets.10.4.0\lib\xamarinios10\ThinkGeo.MapSuite.Styles.WorldStreets.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
